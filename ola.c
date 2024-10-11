@@ -18,5 +18,8 @@ void main() {
     printf("Nome: %s\n", nome);
     //Imprimindo a primeira letra do nome
     printf("Primeira Letra: %c\n", nome[0]);
+    printf("\nDigite o valor de x: ");
+    scanf("%d", &x);
+    printf("O valor digitado foi %d\n", x);
     printf("Olá Mundo!");
 }

@@ -6,6 +6,9 @@ Exercícios sobre os comandos básicos em C
 */
 
 //1. Faça um programa que imprima o seu nome.
+void q1() {
+    printf("João Paulo!");
+}
 
 //2. Faça um programa que imprima o produto dos valores 30 e 27.
 
@@ -85,6 +88,6 @@ Exercícios sobre os comandos básicos em C
 //    necessário também ler o valor da cotação do dólar.
 
 int main() {
-
+    q1();
     return EXIT_SUCCESS;
 }

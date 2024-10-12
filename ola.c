@@ -22,4 +22,5 @@ void main() {
     scanf("%d", &x);
     printf("O valor digitado foi %d\n", x);
     printf("Olá Mundo!");
+
 }

@@ -35,6 +35,16 @@ void q4() {
 
 //7. Faça um programa que leia o nome o endereço e o telefone de
 //   um cliente e ao final, imprima esses dados.
+void q7() {
+    char nome[50], endereco[50], telefone[14];
+    printf("Nome: ");
+    scanf(" %50[^\n]", nome);
+    printf("Endereço: ");
+    scanf(" %50[^\n]", endereco);
+    printf("Telefone: ");
+    scanf(" %14[^\n]", telefone);
+    printf("%s\n%s\n%s\n",nome, endereco, telefone);
+}
 
 //8. Faça um programa que leia dois números inteiros e imprima a
 //   subtração deles.
@@ -100,6 +110,6 @@ void q4() {
 //    necessário também ler o valor da cotação do dólar.
 
 int main() {
-    q1();
+    q7();
     return EXIT_SUCCESS;
 }

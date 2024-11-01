@@ -234,13 +234,13 @@ int main() {
 	scanf("%d", &opcao);
 	switch (opcao) {
 		case 1:
-			questao1();
+			questao01();
 			break;
 		case 2:
-			questao2();
+			questao02();
 			break;
 		case 5:
-			questao5();
+			questao05();
 			break;			
 		case 10:
 			questao10();

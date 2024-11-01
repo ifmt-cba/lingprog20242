@@ -6,6 +6,48 @@ EXERCÍCIOS DO CAPÍTULO 2
 #include <stdlib.h>
 #include <math.h>
 
+void exemploSe() {
+	float media = 5.0; 
+	if (media >= 6) {  // SE (CONDICAO)
+		printf("APROVADO");
+	} else {	// SENAO
+		if (media >=3) {
+			printf("PROVA FINAL");
+		} else {
+			printf("REPROVADO");
+		}
+	}
+}
+
+// Operadores Lógicos E && e OU ||
+void exemploSe2() {
+	float media = 5.0; 
+	if (media >= 6) {  // SE (CONDICAO)
+		printf("APROVADO");
+	}
+	if (media >=3 && media < 6) {
+			printf("PROVA FINAL");
+	}
+	if (media < 3) {
+		printf("REPROVADO");
+	}
+}
+
+void exemploCaso() {
+	int opcaoMenu = 1;
+	switch (opcaoMenu) {
+		case 1:
+			printf("Você escolheu opção 1");
+			break;
+		case 2:
+			printf("Você escolheu opção 2");
+			break;
+		default:
+			printf("Você escolheu nem a 1 e nem a 2");
+			break;		
+	}
+}
+
 //1. Faça um programa que leia dois valores numéricos inteiros e efetue a adição, caso o resultado seja maior que 10, apresentá-lo.
 void questao01() {
 
@@ -192,13 +234,13 @@ int main() {
 	scanf("%d", &opcao);
 	switch (opcao) {
 		case 1:
-			questao01();
+			q1();
 			break;
 		case 2:
-			questao02();
+			q2();
 			break;
 		case 5:
-			questao05();
+			q5();
 			break;			
 		case 10:
 			questao10();

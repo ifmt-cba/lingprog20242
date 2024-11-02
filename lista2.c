@@ -50,27 +50,64 @@ void exemploCaso() {
 
 //1. Faça um programa que leia dois valores numéricos inteiros e efetue a adição, caso o resultado seja maior que 10, apresentá-lo.
 void questao01() {
-
+	int num1 = 0, num2 = 0;
+	printf("Digite um número inteiro: ");
+	scanf("%d", &num1);
+	printf("Digite outro número inteiro: ");
+	scanf("%d", &num2);
+	if ((num1+num2) > 10) {
+		printf("%d + %d = %d\n", num1, num2, num1+num2);
+	}
 }
 
 //2. Faça um programa que leia dois valores inteiros e efetue a adição. Caso o valor somado seja maior que 20, este deverá ser apresentado somando-se a ele mais 8, caso o valor somado seja menor ou igual a 20, este deverá ser apresentado subtraindo-se 5.
 void questao02() {
-
+	int num1 = 0, num2 = 0;
+	printf("Digite um número inteiro: ");
+	scanf("%d", &num1);
+	printf("Digite outro número inteiro: ");
+	scanf("%d", &num2);
+	if ((num1+num2) > 20) {
+		printf("%d + %d + 8 = %d\n", num1, num2, num1+num2+8);
+	} else {
+		printf("%d + %d - 5 = %d\n", num1, num2, num1+num2-5);		
+	}
 }
 
 //3. Faça um programa que leia um número e imprima uma das duas mensagens: "É múltiplo de 3"ou "Não é múltiplo de 3".
 void questao03() {
-	
+	int num = 0;
+	printf("Digite um número inteiro: ");
+	scanf("%d", &num);
+	if (num % 3 == 0) {
+		printf("%d é múltiplo de 3\n", num);
+	} else {
+		printf("%d NÃO é múltiplo de 3\n", num);		
+	}
 }
 
 //4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
 void questao04() {
-	
+	int num = 0;
+	printf("Digite um número inteiro: ");
+	scanf("%d", &num);
+	if (num % 5 == 0) {
+		printf("%d é divisível por 5\n", num);
+	} else {
+		printf("%d NÃO é divisível por 5\n", num);		
+	}	
 }
 
 //5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 void questao05() {
-
+	int num = 0;
+	printf("Digite um número inteiro: ");
+	scanf("%d", &num);
+	if (num % 3 == 0 && num % 7 == 0) {
+		printf("%d é múltiplo de 3 e 7\n", num);
+	} else {
+		printf("%d NÃO é múltiplo de 3 e 7\n", num);		
+	}
 }
 
 //6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
@@ -238,6 +275,12 @@ int main() {
 			break;
 		case 2:
 			questao02();
+			break;
+		case 3:
+			questao03();
+			break;
+		case 4:
+			questao04();
 			break;
 		case 5:
 			questao05();

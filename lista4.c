@@ -7,10 +7,21 @@
 #include <time.h>
 #include <string.h>
 
-//1. Faça um programa em C que armazene 15 números inteiros em um vetor e depois
-//permita que o usuário digite um número inteiro para ser buscado no vetor, se
-//for encontrado o programa deve imprimir a posição desse número no vetor, caso
-//contrário, deve imprimir a mensagem: "Nao encontrado!".
+void exemploVetor() {
+  float notas[4];
+  //alimentando o vetor
+  for (int i=0; i<4; i++) {
+    printf("Digite a nota %d: ", i+1);
+    scanf("%f", &notas[i]);
+  }
+  float total = 0;
+  for (int i=0; i<4; i++) {
+    total = total + notas[i];
+  }
+  float media = total/4;
+  printf("Média: %.1f\n", media);
+}
+
 void exemploMatriz() {
   int matriz[3][3];
   for (int l = 0; l < 3; l++) {
@@ -26,6 +37,11 @@ void exemploMatriz() {
     printf("\n");
   }
 }
+
+//1. Faça um programa em C que armazene 15 números inteiros em um vetor e depois
+//permita que o usuário digite um número inteiro para ser buscado no vetor, se
+//for encontrado o programa deve imprimir a posição desse número no vetor, caso
+//contrário, deve imprimir a mensagem: "Nao encontrado!".
 
 void q01() {
   int numeros[15];
@@ -131,6 +147,9 @@ void q01() {
 //para a menor nota e imprima uma relação contendo todas as matrículas e médias.
 
 int main() {
+  printf("EXEMPLO VETOR\n");
+  exemploVetor();
+  printf("\nEXEMPLO MATRIZ\n");
   exemploMatriz();
   //q01();
   return EXIT_SUCCESS;

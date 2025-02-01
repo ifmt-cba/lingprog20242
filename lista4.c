@@ -38,6 +38,40 @@ void exemploMatriz() {
   }
 }
 
+void campoMinado() {
+  char campo_visivel[4][4];
+  int campo_oculto[4][4] = {{1,1,2,-1},{1,-1,2,1},{1,1,2,1},{0,0,1,-1}};
+  int posicoesAbertas = 0;
+
+  for (int l = 0; l < 4; l++) {
+    for (int c = 0; c < 4; c++) {
+      campo_visivel[l][c] = '?';
+    }
+  }
+
+  while (posicoesAbertas < 13) {
+    for (int l = 0; l < 4; l++) {
+      for (int c = 0; c < 4; c++) {
+        printf("%c ", campo_visivel[l][c]);
+      }
+      printf("\n");
+    }
+    char posicao[3];
+    printf("Escolha uma posicao (l,c): ");
+    scanf("%s", posicao);
+    int l = posicao[0] - 48;
+    int c = posicao[2] - 48;
+    if (campo_oculto[l][c] == -1) {
+      campo_visivel[l][c] = 'B';
+      printf("VOCÊ PERDEU!!!");
+      break;
+    } else {
+      campo_visivel[l][c] = campo_oculto[l][c];
+    }
+  }
+
+}
+
 //1. Faça um programa em C que armazene 15 números inteiros em um vetor e depois
 //permita que o usuário digite um número inteiro para ser buscado no vetor, se
 //for encontrado o programa deve imprimir a posição desse número no vetor, caso
@@ -147,10 +181,13 @@ void q01() {
 //para a menor nota e imprima uma relação contendo todas as matrículas e médias.
 
 int main() {
-  printf("EXEMPLO VETOR\n");
-  exemploVetor();
-  printf("\nEXEMPLO MATRIZ\n");
-  exemploMatriz();
+  //printf("EXEMPLO VETOR\n");
+  //exemploVetor();
+  //printf("\nEXEMPLO MATRIZ\n");
+  //exemploMatriz();
+  printf("\nJOGO CAMPO MINADO\n");
+  campoMinado();
+
   //q01();
   return EXIT_SUCCESS;
 }

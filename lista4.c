@@ -38,11 +38,19 @@ void exemploMatriz() {
   }
 }
 
+void exibirCampoMinado(char campo[4][4]) {
+    for (int l = 0; l < 4; l++) {
+      for (int c = 0; c < 4; c++) {
+        printf("%c ", campo[l][c]);
+      }
+      printf("\n");
+    }
+}
+
 void campoMinado() {
   char campo_visivel[4][4];
   char campo_oculto[4][4] = {{'1','1','2','B'},{'1','B','2','1'},{'1','1','2','1'},{'0','0','1','B'}};
   int posicoesAbertas = 0;
-
   for (int l = 0; l < 4; l++) {
     for (int c = 0; c < 4; c++) {
       campo_visivel[l][c] = '?';
@@ -50,12 +58,7 @@ void campoMinado() {
   }
 
   while (posicoesAbertas < 13) {
-    for (int l = 0; l < 4; l++) {
-      for (int c = 0; c < 4; c++) {
-        printf("%c ", campo_visivel[l][c]);
-      }
-      printf("\n");
-    }
+    exibirCampoMinado(campo_visivel);
     char posicao[3];
     printf("Escolha uma posicao (l,c): ");
     scanf("%s", posicao);
@@ -64,12 +67,7 @@ void campoMinado() {
     if (campo_oculto[l][c] == 'B') {
       campo_visivel[l][c] = 'B';
       printf("VOCÊ PERDEU!!!\n\n");
-      for (int l = 0; l < 4; l++) {
-        for (int c = 0; c < 4; c++) {
-          printf("%c ", campo_visivel[l][c]);
-        }
-        printf("\n");
-      }
+      exibirCampoMinado(campo_visivel);
       break;
     } else {
       campo_visivel[l][c] = campo_oculto[l][c];

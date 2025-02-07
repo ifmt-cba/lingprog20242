@@ -40,7 +40,7 @@ void exemploMatriz() {
 
 void campoMinado() {
   char campo_visivel[4][4];
-  int campo_oculto[4][4] = {{1,1,2,-1},{1,-1,2,1},{1,1,2,1},{0,0,1,-1}};
+  char campo_oculto[4][4] = {{'1','1','2','B'},{'1','B','2','1'},{'1','1','2','1'},{'0','0','1','B'}};
   int posicoesAbertas = 0;
 
   for (int l = 0; l < 4; l++) {
@@ -61,9 +61,15 @@ void campoMinado() {
     scanf("%s", posicao);
     int l = posicao[0] - 48;
     int c = posicao[2] - 48;
-    if (campo_oculto[l][c] == -1) {
+    if (campo_oculto[l][c] == 'B') {
       campo_visivel[l][c] = 'B';
-      printf("VOCÊ PERDEU!!!");
+      printf("VOCÊ PERDEU!!!\n\n");
+      for (int l = 0; l < 4; l++) {
+        for (int c = 0; c < 4; c++) {
+          printf("%c ", campo_visivel[l][c]);
+        }
+        printf("\n");
+      }
       break;
     } else {
       campo_visivel[l][c] = campo_oculto[l][c];
